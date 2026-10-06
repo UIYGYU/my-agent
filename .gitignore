@@ -1,0 +1,39 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local system repair transcript
+scripts/repair-neo4j-port.log
+
+# Local credentials and LLM configuration backups
+.env
+.env.*
+!.env.example
+
+# Local memories, imported documents, and generated reports
+memory_data/
+knowledge_base/
+kb/
+data_science_kb/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.log
+learning_report_*.json
+
+# Editor and test caches
+.idea/
+.vscode/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
