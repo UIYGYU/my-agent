@@ -17,11 +17,16 @@ scripts/repair-neo4j-port.log
 .env.*
 !.env.example
 
+# Local resume and Word documents
+*.docx
+
 # Local memories, imported documents, and generated reports
 memory_data/
 knowledge_base/
 kb/
 data_science_kb/
+demo_codebase_notes/
+*.json
 *.db
 *.db-*
 *.sqlite
