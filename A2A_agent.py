@@ -56,7 +56,9 @@ receptionist = SimpleAgent(
 tech_tool = A2ATool(
     agent_url="http://localhost:6000",
     name="tech_expert",
-    description="技术专家，回答技术相关问题"
+    description="""技术专家，回答技术相关问题。提问时必须传入 action=ask 和 question；question 是客户的问题。
+调用示例：
+[TOOL_CALL:tech_expert:action=ask,question=如何调用API]"""
 )
 receptionist.add_tool(tech_tool)
 
@@ -64,7 +66,9 @@ receptionist.add_tool(tech_tool)
 sales_tool = A2ATool(
     agent_url="http://localhost:6001",
     name="sales_advisor",
-    description="销售顾问，回答价格、购买相关问题"
+    description="""销售顾问，回答价格、购买相关问题。提问时必须传入 action=ask 和 question；question 是客户的问题。
+调用示例：
+[TOOL_CALL:tech_expert:action=ask,question=如何调用API]"""
 )
 receptionist.add_tool(sales_tool)
 

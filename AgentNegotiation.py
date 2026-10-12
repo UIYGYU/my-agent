@@ -53,7 +53,12 @@ def negotiate_task(text: str) -> str:
 
         # 向agent1发送提案
         proposal = {"task":task, "deadline":deadline}
-        return str({"status":"negotiating", "proposal":proposal})
+        client = A2AClient("http://localhost:7000")
+        response = client.execute_skill(
+            "propose",
+            f"propose {proposal}"
+        )
+        return response.get("result", str(response))
 
     else:
         return str({"status": "error", "message": "无效的协商请求"})
@@ -61,3 +66,11 @@ def negotiate_task(text: str) -> str:
 # 启动服务
 threading.Thread(target=lambda: agent1.run(port=7000), daemon=True).start()
 threading.Thread(target=lambda: agent2.run(port=7001), daemon=True).start()
+time.sleep(2)
+
+client = A2AClient("http://localhost:7001")
+result = client.execute_skill(
+    "negotiate",
+    "negotiate task:写报告 deadline:3"
+)
+print(result)
