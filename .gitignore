@@ -19,6 +19,7 @@ scripts/repair-neo4j-port.log
 
 # Local resume and Word documents
 *.docx
+*.pdf
 
 # Local memories, imported documents, and generated reports
 memory_data/
@@ -26,6 +27,7 @@ knowledge_base/
 kb/
 data_science_kb/
 demo_codebase_notes/
+models/
 *.json
 *.db
 *.db-*
